@@ -1,0 +1,24 @@
+// Resolver function - this function picks which of the
+// implementations will be executed when foo() is called
+//
+// The resolver function is only run once, the first time
+// that foo() is called.
+//
+static void (*resolve_<<function_name>>(void)) {
+	// Each of these two variables is populated with
+	// a bitfield indicating specific hardware 
+	// capabilities. hwcaps includes a bit for SVE,
+	// and hwcaps2 includes a bit for SVE2
+	//
+	long hwcaps  = getauxval(AT_HWCAP);
+	long hwcaps2 = getauxval(AT_HWCAP2);
+
+	printf("\n### Resolver function - selecting the implementation to use for <<function_name>>()\n");
+	if (hwcaps2 & HWCAP2_SVE2) {
+		return <<function_sve2>>;
+	} else if (hwcaps & HWCAP_SVE) {
+		return <<function_sve>>;
+	} else {
+		return <<function_simd>>;
+	}
+};
