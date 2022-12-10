@@ -62,5 +62,5 @@ ffunctionAltered.write(includeSysAux + iFuncProto + pragmaSIMD + funcOriginSIMD 
                 seperator + pragmaSVE2 + funcOriginSVE2 +
                 seperator + resolverFunc)
 
-bash = "gcc -g -O3 main.c function_altered.c -o ifuncMain"
-os.system(bash)
+# bash = "gcc -g -O3 main.c function_altered.c -o ifuncMain"
+# os.system(bash)
