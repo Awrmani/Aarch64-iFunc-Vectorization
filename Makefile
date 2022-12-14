@@ -15,5 +15,5 @@ testSVE2:
 	qemu-aarch64 ./ifuncMain tests/input/bree.jpg 2.0 2.0 2.0 tests/output/bree3b.jpg
 
 clean:
-	rm tests/bree??.jpg
+	rm tests/output/bree??.jpg
 
