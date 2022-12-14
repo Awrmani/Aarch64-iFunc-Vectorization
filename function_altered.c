@@ -5,7 +5,7 @@ __attribute__ (( ifunc("resolve_adjust_channels") )) void adjust_channels(unsign
 #pragma GCC target "arch=armv8-a"
 
 /*
-
+        
         adjust_channels_SIMD :: adjust red/green/blue colour channels in an image
         
         The function returns an adjusted image in the original location.
@@ -55,7 +55,7 @@ void adjust_channels_SIMD(unsigned char *image, int x_size, int y_size,
 #pragma GCC target "arch=armv8-a+sve"
 
 /*
-
+        
         adjust_channels_SVE :: adjust red/green/blue colour channels in an image
         
         The function returns an adjusted image in the original location.
@@ -105,7 +105,7 @@ void adjust_channels_SVE(unsigned char *image, int x_size, int y_size,
 #pragma GCC target "arch=armv8-a+sve2"
 
 /*
-
+        
         adjust_channels_SVE2 :: adjust red/green/blue colour channels in an image
         
         The function returns an adjusted image in the original location.
@@ -145,6 +145,14 @@ void adjust_channels_SVE2(unsigned char *image, int x_size, int y_size,
                 image[i+2] = MIN((float)image[i+2] * green_factor, 255);
         }
 }
+
+
+
+// -----------------------------------------------------------------
+
+
+
+#pragma GCC target "arch=armv8-a"
 
 
 

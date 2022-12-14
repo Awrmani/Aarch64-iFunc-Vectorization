@@ -1,5 +1,5 @@
 /*
-
+        
         adjust_channels :: adjust red/green/blue colour channels in an image
         
         The function returns an adjusted image in the original location.
