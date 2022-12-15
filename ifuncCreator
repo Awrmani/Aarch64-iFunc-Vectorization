@@ -52,6 +52,12 @@ for num in sys.argv:
     fheader = open(funcHeader, "r")
     proto = fheader.read()
     fheader.close()
+    
+    headerDefine = "#ifndef " + funcFile.upper() + "_H\n" + "#define " + funcFile.upper() + "_H\n\n" + proto + "\n\n#endif"
+    fheader = open(funcHeader, "w")
+    fheader.write(headerDefine)
+    fheader.close()
+    
     proto = str(proto)
 
     start = proto.find("*/")
