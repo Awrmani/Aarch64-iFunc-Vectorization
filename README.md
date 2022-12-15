@@ -2,13 +2,13 @@
 
 The created tool is called ifuncCreater.py.
 
-This program requires function.c as its first argument and function.h as its second.
+This program can takes as many function files as needed!
 
 The existance of resolver.txt in the same folder is essential for this program.
 
 ## Files
 
-ifuncCreator.py is the created tool to make the required functions and use iFunc to determine between the function implementations and choose the right one based on the system compatibility.
+ifuncCreator is the created tool to make the required functions and use iFunc to determine between the function implementations and choose the right one based on the system compatibility.
 
 function.c - is the initial sample function file which will be used for testing.
 
@@ -20,4 +20,7 @@ function_altered.c - is the new file created after running ifuncCreator.py.
 
 ## Run Command
 
-python ifuncCreator.py function.c function.h
+./ifuncCreator function.c adjuster.c ... compile
+
+or for no main compilation:
+./ifuncCreator function.c adjuster.c ...
